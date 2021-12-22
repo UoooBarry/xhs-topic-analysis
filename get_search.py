@@ -8,23 +8,6 @@ from bs4 import BeautifulSoup
 import urllib3
 import uuid
 import hashlib
-from selenium import webdriver
-import time
-from selenium.webdriver.firefox.options import Options
-
-# 获取收藏数和评论数
-def get_detail(url):
-    options = Options()
-    options.add_argument('--headless')
-    driver = webdriver.Firefox(executable_path='/Users/barry/workspace/xhs/geckodriver', options=options)
-
-    driver.get(url)
-    html = driver.page_source
-    bs = BeautifulSoup(html, "html.parser") 
-
-    description = bs.find("meta", property="og:description")['content']
-    return [description]
-
 
 contents_all=[]
 
