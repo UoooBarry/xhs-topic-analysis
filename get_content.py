@@ -40,7 +40,7 @@ def get_detail(id):
         driver.quit()
     except TimeoutException:
         description = "--Time out!--"
-        driver.get_screenshot_as_file("screenshot-" + str(id)  +".png")
+        driver.get_screenshot_as_file("./out/screenshots/screenshot-" + str(id)  +".png")
         driver.quit()
 
     print(description)
@@ -48,7 +48,7 @@ def get_detail(id):
     return description
 
 
-csvfile = open('小红书.csv', 'r')
+csvfile = open('./out/小红书.csv', 'r')
 ids = ([x[0] for x in csv.reader(csvfile)])
 
 for i, id in enumerate(ids):
