@@ -45,7 +45,7 @@ try:
             html = requests.get(url=url, headers=headers, verify=False).text
             # print(html)
             content = json.loads(html)
-            f = open('小红书.csv', 'a+', encoding='utf-8')  # a+表示追加
+            f = open('./out/小红书.csv', 'a+', encoding='utf-8')  # a+表示追加
             csv_writer = csv.writer(f)
             for i in range(len(content["data"]["notes"])):
                 id = content["data"]["notes"][i]["id"]

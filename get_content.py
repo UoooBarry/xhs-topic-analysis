@@ -55,8 +55,8 @@ for i, id in enumerate(ids):
     print(str(i + 1) + ': ' + id)
     descriptions.append(get_detail(id))
 
-with open('小红书.csv', 'r') as read_obj, \
-        open('小红书_笔记.csv', 'w', newline='') as write_obj:
+with open('./out/小红书.csv', 'r') as read_obj, \
+        open('./out/小红书_笔记.csv', 'w', newline='') as write_obj:
     # Create a csv.reader object from the input file object
     csv_reader = csv.reader(read_obj)
     # Create a csv.writer object from the output file object
@@ -68,7 +68,7 @@ with open('小红书.csv', 'r') as read_obj, \
         # Add the updated row / list to the output file
         csv_writer.writerow(row)
 
-f = open('小红书_笔记_评论.csv', 'w', encoding='utf-8')
+f = open('./out/小红书_笔记_评论.csv', 'w', encoding='utf-8')
 csv_writer = csv.writer(f)
 for comment in comments:
     csv_writer.writerow(comment)
