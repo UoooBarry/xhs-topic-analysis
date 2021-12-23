@@ -1,5 +1,7 @@
 __pycache__/**
 __pycache__/
 
-./out
-./out/*
+out
+out/**
+
+.DS_Store
